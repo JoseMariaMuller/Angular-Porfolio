@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Skill } from '../../models/skill.model';
 
 @Component({
   selector: 'app-skills-list',
@@ -7,9 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './skills-list.css'
 })
 export class SkillsList {
-  skills = [
-    'HTML', 'CSS', 'TypeScript', 'JavaScript',
-    'React', 'Node.js', 'Express', 'Next.js',
-    'Nest.js', 'MongoDB', 'PostgreSQL', 'Docker'
+  skills: Skill[] = [
+    { name: 'HTML', icon: 'devicon-html5-plain colored' },
+    { name: 'CSS', icon: 'devicon-css3-plain colored' },
+    { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
+    { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+    { name: 'React', icon: 'devicon-react-original colored' },
+    { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+    { name: 'Express', icon: 'devicon-express-original' },
+    { name: 'Next.js', icon: 'devicon-nextjs-original' },
+    { name: 'Nest.js', icon: 'devicon-nestjs-plain colored' },
+    { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+    { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+    { name: 'Docker', icon: 'devicon-docker-plain colored' },
   ];
 }
