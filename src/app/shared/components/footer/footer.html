@@ -1,0 +1,30 @@
+<footer class="border-t border-gray-800 py-10 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <!-- Marca -->
+        <div class="text-center md:text-left">
+            <span class="font-bold text-white">JM Muller</span>
+            <p class="text-gray-500 text-sm mt-1">Desarrollador Web Full Stack</p>
+        </div>
+
+        <!-- Navegación rápida -->
+        <div class="flex gap-6 text-sm text-gray-400">
+            <a href="#stack" class="hover:text-indigo-400 transition">Stack</a>
+            <a href="#proyectos" class="hover:text-indigo-400 transition">Proyectos</a>
+            <a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a>
+        </div>
+
+        <!-- Redes -->
+      <div class="flex gap-4">
+  @for (social of socials; track social.name) {
+    <a [href]="social.url" target="_blank" [attr.aria-label]="social.name" class="text-2xl text-gray-400 hover:text-white transition">
+      <i [class]="social.icon"></i>
+    </a>
+  }
+</div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-gray-800 text-center text-gray-600 text-xs">
+        © {{ currentYear }} José María Muller. Todos los derechos reservados.
+    </div>
+</footer>

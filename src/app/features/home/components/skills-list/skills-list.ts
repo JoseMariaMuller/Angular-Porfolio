@@ -22,4 +22,9 @@ export class SkillsList {
     { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
     { name: 'Docker', icon: 'devicon-docker-plain colored' },
   ];
+
+  // Duplicamos para que el loop sea perfecto (cuando termina la primera tanda, ya está la segunda lista para continuar sin salto)
+  get loopedSkills(): Skill[] {
+    return [...this.skills, ...this.skills];
+  }
 }

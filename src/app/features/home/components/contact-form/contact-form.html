@@ -1,0 +1,48 @@
+<section id="contacto" class="py-24 px-6 max-w-2xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-white">¿Trabajamos juntos?</h2>
+    <p class="text-gray-400 text-center mb-12">Contame tu idea y te respondo a la brevedad.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+
+        <!-- Nombre -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
+            <input id="name" type="text" formControlName="name"
+                class="w-full bg-gray-800 border rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                [class.border-gray-700]="!hasError('name')" [class.border-red-500]="hasError('name')"
+                placeholder="Tu nombre" />
+            @if (hasError('name')) {
+            <p class="text-red-400 text-xs mt-1">Ingresá al menos 2 caracteres.</p>
+            }
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+            <input id="email" type="email" formControlName="email"
+                class="w-full bg-gray-800 border rounded-lg px-5 py-3.5 text-base text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+                [class.border-gray-700]="!hasError('email')" [class.border-red-500]="hasError('email')"
+                placeholder="tu@email.com" />
+            @if (hasError('email')) {
+            <p class="text-red-400 text-xs mt-1">Ingresá un email válido.</p>
+            }
+        </div>
+
+        <!-- Mensaje -->
+        <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+            <textarea id="message" rows="4" formControlName="message"
+                class="w-full bg-gray-800 border rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"
+                [class.border-gray-700]="!hasError('message')" [class.border-red-500]="hasError('message')"
+                placeholder="Contame sobre tu proyecto..."></textarea>
+            @if (hasError('message')) {
+            <p class="text-red-400 text-xs mt-1">Ingresá al menos 10 caracteres.</p>
+            }
+        </div>
+
+        <button type="submit"
+            class="mt-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-lg transition">
+            Enviar mensaje
+        </button>
+    </form>
+</section>

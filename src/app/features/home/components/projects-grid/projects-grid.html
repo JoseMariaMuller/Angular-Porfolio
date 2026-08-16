@@ -1,8 +1,8 @@
-<section id="proyectos" class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center text-white">Proyectos</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        @for (project of projects(); track project.id) {
-        <app-project-card [project]="project" />
-        }
-    </div>
+<section id="proyectos" class="py-24 px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl md:text-5xl font-bold mb-14 text-center text-white">Proyectos</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (project of projects(); track project.id) {
+      <app-project-card [project]="project" />
+    }
+  </div>
 </section>

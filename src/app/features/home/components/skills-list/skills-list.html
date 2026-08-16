@@ -1,23 +1,31 @@
-<section id="stack" class="py-16 px-6 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center text-white">Stack Tecnológico</h2>
+<section id="stack" class="py-24 overflow-hidden">
+  <h2 class="text-4xl md:text-5xl font-bold mb-14 text-center text-white px-6">Stack Tecnológico</h2>
 
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
-        @for (skill of skills; track skill.name) {
-        <div
-            class="flex flex-col items-center gap-2 bg-gray-800 rounded-xl py-6 px-3 border border-gray-700 hover:border-indigo-500 hover:-translate-y-1 transition duration-300">
-            @if (skill.name === 'Next.js') {
-            <svg class="w-10 h-10" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="90" cy="90" r="90" fill="white" />
-                <path
-                    d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 165.516C143.333 163.443 146.509 161.132 149.508 157.52Z"
-                    fill="black" />
-                <rect x="115" y="54" width="12" height="72" fill="black" />
-            </svg>
-            } @else {
-            <i [class]="skill.icon" class="text-4xl"></i>
-            }
-            <span class="text-xs text-gray-300 text-center">{{ skill.name }}</span>
-        </div>
+  <div class="relative">
+    <!-- Fades en los bordes para que no corte en seco -->
+    <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r from-[#0a0e1a] to-transparent z-10"></div>
+    <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l from-[#0a0e1a] to-transparent z-10"></div>
+
+    <div class="marquee-track flex gap-6 w-max">
+      @for (skill of loopedSkills; track $index) {
+        @if (skill.name === 'Next.js') {
+          <div class="flex flex-col items-center gap-3 bg-gray-800 rounded-xl py-8 px-6 border border-gray-700 hover:border-indigo-500 transition duration-300 w-32 shrink-0">
+            <div class="w-12 h-12 flex items-center justify-center bg-white rounded-full">
+              <svg class="w-7 h-7" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="90" cy="90" r="90" fill="white"/>
+                <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 165.516C143.333 163.443 146.509 161.132 149.508 157.52Z" fill="black"/>
+                <rect x="115" y="54" width="12" height="72" fill="black"/>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-300 text-center">{{ skill.name }}</span>
+          </div>
+        } @else {
+          <div class="flex flex-col items-center gap-3 bg-gray-800 rounded-xl py-8 px-6 border border-gray-700 hover:border-indigo-500 transition duration-300 w-32 shrink-0">
+            <i [class]="skill.icon" class="text-5xl"></i>
+            <span class="text-sm text-gray-300 text-center">{{ skill.name }}</span>
+          </div>
         }
+      }
     </div>
+  </div>
 </section>
