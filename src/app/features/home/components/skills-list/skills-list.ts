@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Skill } from '../../models/skill.model';
+import { FadeInView } from '../../../../shared/directives/fade-in-view';
 
 @Component({
   selector: 'app-skills-list',
-  imports: [],
+  imports: [FadeInView],
   templateUrl: './skills-list.html',
   styleUrl: './skills-list.css'
 })

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FadeInView } from '../../../../shared/directives/fade-in-view';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FadeInView],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.css'
 })

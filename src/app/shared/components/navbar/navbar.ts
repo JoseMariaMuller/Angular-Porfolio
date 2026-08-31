@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ElementRef, inject, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +7,8 @@ import { Component, signal } from '@angular/core';
   styleUrl: './navbar.css'
 })
 export class Navbar {
+  private el = inject(ElementRef<HTMLElement>);
+
   isMenuOpen = signal(false);
 
   toggleMenu() {
@@ -15,5 +17,15 @@ export class Navbar {
 
   closeMenu() {
     this.isMenuOpen.set(false);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.isMenuOpen()) return;
+
+    const clickedInside = this.el.nativeElement.contains(event.target as Node);
+    if (!clickedInside) {
+      this.closeMenu();
+    }
   }
 }
