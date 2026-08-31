@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   description: string;
   techStack: string[];
-  githubUrl: string;
+  githubUrl?: string;  
   liveUrl?: string;
   imageUrl?: string;
   featured?: boolean;

@@ -8,27 +8,27 @@ export class ProjectsService {
   private readonly _projects = signal<Project[]>([
     {
       id: 1,
-      name: 'E-commerce API',
-      description: 'API REST con autenticación JWT, capas controller/service/model.',
-      techStack: ['Node.js', 'Express', 'PostgreSQL', 'Docker'],
-      githubUrl: 'https://github.com/tu-usuario/proyecto1',
+      name: 'Doña Plácida',
+      description: 'Sitio web para el almacén de un pueblo, con información del comercio, productos y contacto para la comunidad local.',
+      techStack: ['Next.js', 'React', 'TypeScript'],
+      liveUrl: 'https://dona-placida.vercel.app/',
       imageUrl: '/doniaplacida.PNG',
       featured: true,
     },
     {
       id: 2,
-      name: 'Dashboard Admin',
-      description: 'Panel de administración con gráficos en tiempo real.',
-      techStack: ['React', 'Next.js', 'MongoDB'],
-      githubUrl: 'https://github.com/tu-usuario/proyecto2',
+      name: 'MecanicLab',
+      description: 'Aplicación web para gestión de un taller mecánico: control de clientes, vehículos y órdenes de trabajo.',
+      techStack: ['Next.js', 'React', 'TypeScript'],
+      liveUrl: 'https://mecaniclab.vercel.app/',
       imageUrl: '/mecanicapp.PNG',
     },
+    // TODO: reemplazar por un proyecto real o quitar de la lista antes de publicar
     {
       id: 3,
       name: 'Task Manager',
       description: 'Gestor de tareas colaborativo con websockets.',
       techStack: ['Nest.js', 'TypeScript', 'MongoDB'],
-      githubUrl: 'https://github.com/tu-usuario/proyecto3',
       imageUrl: 'https://placehold.co/600x400/1e293b/6366f1?text=Task+Manager',
     },
   ]);
