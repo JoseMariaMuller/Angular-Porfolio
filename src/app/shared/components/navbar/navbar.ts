@@ -1,8 +1,9 @@
 import { Component, signal, ElementRef, inject, HostListener } from '@angular/core';
+import { Logo } from '../logo/logo';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [Logo],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
