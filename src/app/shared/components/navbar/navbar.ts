@@ -19,10 +19,13 @@ export class Navbar {
     this.isMenuOpen.set(false);
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.isMenuOpen()) return;
-
     const clickedInside = this.el.nativeElement.contains(event.target as Node);
     if (!clickedInside) {
       this.closeMenu();
